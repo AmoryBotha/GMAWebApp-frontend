@@ -1,0 +1,297 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    padding: 10px 20px;
+    background-color: #1c1d42;
+    color: white;
+    height: 60px;
+    border-radius: 40px 40px 40px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbarDropdownActive {
+    border-radius: 40px 40px 0 40px;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logoImage {
+    max-height: 60px;
+}
+
+.title {
+    flex: 2;
+    text-align: center;
+}
+
+.title h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.hamburger {
+    flex: 1;
+    text-align: right;
+}
+
+.hamburgerIcon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 180px;
+    background-color: #1c1d42;
+    border-radius: 0 0 40px 40px;
+    padding: 27px 0;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Make the dropdown responsive */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%; /* Full width on small screens */
+        top: 60px;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    .dropdownItem {
+        display: block;
+        padding: 15px;
+    }
+}
+
+.dropdownItem {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.outer-container {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    height: calc(100% - 100px);
+    border: 1px solid white;
+    border-radius: 40px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 500;
+}
+
+.inner-container {
+    width: 98.5%;
+    height: 97%;
+    background-color: #1c1d42;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: auto; /* ✅ Enables vertical scrolling */
+    max-height: 80vh; /* ✅ Prevents content from overflowing */
+}
+
+.expandableDiv {
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    margin-bottom: 5px;
+    border: 1px solid #2b74b1;
+    border-radius: 30px;
+    background-color: #181930;
+    padding: 5px;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    max-height: 250px; /* ✅ Limits height */
+    overflow-y: auto; /* ✅ Enables vertical scroll */
+}
+
+.expandableDiv.expanded {
+    max-height: none !important; /* ✅ Allow full height */
+    overflow: visible !important; /* ✅ Ensure content is visible */
+    padding-bottom: 15px;
+}
+
+/* ✅ Removed limegreen debugging border */
+
+.divHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column; /* ✅ Moves labels above values */
+    gap: 5px;
+    flex: 1;
+    min-width: 150px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: white;
+    justify-content: start;
+    flex-shrink: 0;
+}
+
+/* ✅ Ensures the first `span` (label) is bold and second `span` (value) is regular weight */
+.section span:first-child {
+    font-weight: bold;
+}
+
+.section span:last-child {
+    font-weight: normal; /* ✅ Keeps owner.xxx details in regular font */
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 100px;
+    justify-content: flex-end;
+}
+
+.modify {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.modify:hover {
+    text-decoration: underline;
+    color: #FFFFFF;
+}
+
+.arrow {
+    font-size: 16px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.arrow:hover {
+    color: #2b74b1;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.separator {
+    width: calc(100% - 20px);
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 5px 10px;
+}
+
+/* ✅ Updated Levy Account Section for Proper Layout */
+.levy-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.25); */
+}
+
+.levy-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+    padding: 5px 10px;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.25); */
+}
+
+/* ✅ Ensure All Columns Align Correctly */
+.levy-row span,
+.levy-header span {
+    flex: 1;
+    text-align: center;
+}
+
+/* ✅ Prevent text from wrapping */
+.levy-row span {
+    white-space: nowrap;
+}
+
+.action {
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+}
+
+.loading-text {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ✅ Loading Spinner */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.no-accounts {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}

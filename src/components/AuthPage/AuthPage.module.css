@@ -1,0 +1,298 @@
+.outer-container { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 90%;
+    border: 1px solid white;
+    border-radius: 80px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container {
+    width: 97%;
+    height: 95%;
+    background: url('../assets/background.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 60px;
+    display: flex;
+    overflow: hidden;
+}
+
+.card {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(28, 29, 66, 0.98);
+    border-radius: 60px;
+    position: relative;
+    z-index: 1;
+    transition: transform 1s ease-in-out;
+    transform: translateX(0);
+}
+
+/* ===================== Default (laptops & large tablets) ===================== */
+/* Slides fully off the screen when .move-right is applied */
+.move-left {
+    transform: translateX(0);
+}
+.move-right {
+    transform: translateX(100%);
+}
+
+/* ========================= Disable slide on ≤ 768px ========================= */
+@media (max-width: 768px) {
+    /* Outer container & card sizing tweaks */
+    .outer-container {
+        width: 90%;
+        height: 92%;
+        border-radius: 70px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .inner-container {
+        border-radius: 50px;
+    }
+
+    .card {
+        width: 100%;
+        border-radius: 50px;
+    }
+
+    /* .move-right no longer slides the card off-screen on small devices */
+    .move-right {
+        transform: translateX(0);
+    }
+
+    .form-container h1 {
+        font-size: 42px;
+    }
+
+    .input-group input {
+        height: 45px;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    button {
+        width: 115px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+/* ====================== Even smaller phones (≤ 480px) ======================= */
+@media (max-width: 480px) {
+    .outer-container {
+        width: 95%;
+        height: 95%;
+        border-radius: 60px;
+    }
+
+    .inner-container {
+        border-radius: 40px;
+    }
+
+    .card {
+        border-radius: 40px;
+    }
+
+    .form-container h1 {
+        font-size: 36px;
+    }
+
+    .input-group input {
+        height: 40px;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 110px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+/* =========== Phones in landscape (height ≤ 500px & orientation: landscape) =========== */
+@media (orientation: landscape) and (max-height: 500px) {
+    /* Let content scroll if space is limited */
+    .outer-container {
+        position: static;
+        transform: none;
+        margin: 70px auto 20px auto;
+        width: 95%;
+        height: auto;
+        min-height: 80%;
+        border-radius: 50px;
+        overflow-y: auto;
+    }
+
+    .inner-container {
+        width: 100%;
+        height: auto;
+        border-radius: 40px;
+        overflow: auto;
+    }
+
+    .card {
+        width: 95%;
+        border-radius: 40px;
+        margin: 20px auto;
+    }
+
+    /* For phones in landscape, also disable slide */
+    .move-right {
+        transform: translateX(0);
+    }
+
+    .form-container h1 {
+        font-size: 36px;
+    }
+
+    .input-group input {
+        height: 40px;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 110px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+/* =========================== Shared styles below ============================ */
+
+.logo-image {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 50%;
+    height: auto;
+}
+
+.form-container {
+    width: 80%;
+    color: white;
+    text-align: center;
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-group input {
+    height: 50px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #E7EBEF;
+    border-radius: 30px;
+    background-color: #273D7B;
+    color: #FFFFFF;
+    outline: none;
+    font-weight: 100;
+    font-size: 17px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #E7EBEF;
+    opacity: 1;
+}
+
+.input-group input:focus {
+    border-color: #2B74B1;
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.forgot-password-link {
+    font-size: 15px;
+    font-weight: 400;
+    color: #2B74B1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+.register-text,
+.login-text {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+
+.register-text a,
+.login-text a {
+    color: white;
+    text-decoration: none;
+}
+
+.back-to-login-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #2B74B1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-to-login-link:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 125px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    background: linear-gradient(180deg, #2B74B1, #262968);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}

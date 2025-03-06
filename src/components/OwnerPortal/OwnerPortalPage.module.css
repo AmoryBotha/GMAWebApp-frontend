@@ -1,0 +1,453 @@
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    padding: 10px 20px;
+    background-color: #1c1d42;
+    color: white;
+    height: 60px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbarDropdownActive {
+    border-radius: 40px 40px 0 40px;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logoImage {
+    max-width: 100%;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+.title {
+    flex: 2;
+    text-align: center;
+}
+
+.title h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.hamburger {
+    flex: 1;
+    text-align: right;
+    cursor: pointer;
+}
+
+.hamburgerIcon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.backButton {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.backButton:hover {
+    text-decoration: underline;
+}
+
+/* ========================= */
+/* NAVBAR DROPDOWN */
+/* ========================= */
+.dropdown {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 180px;
+    background-color: #1c1d42;
+    border-radius: 0 0 40px 40px;
+    padding: 27px 0;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+        top: 60px;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+    .dropdownItem {
+        display: block;
+        padding: 15px;
+    }
+}
+
+.dropdownItem {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================= */
+/* OUTER & INNER CONTAINERS */
+/* ========================= */
+.outer-container {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    height: calc(100% - 100px);
+    border: 1px solid white;
+    border-radius: 40px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 500;
+    overflow: auto; /* Allow scrolling on smaller screens */
+}
+
+.inner-container {
+    width: 98.5%;
+    height: 97%;
+    background-color: #1c1d42;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+/* ========================= */
+/* EXPANDABLE DIV */
+/* ========================= */
+.expandableDiv {
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: calc(100% - 20px);
+    margin: 10px auto 5px auto;
+    border: 1px solid #2b74b1;
+    border-radius: 30px;
+    background-color: #181930;
+    padding: 5px;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.expandableDiv.expanded {
+    max-height: none !important;
+    overflow: visible !important;
+    padding-bottom: 15px;
+}
+
+/* ========================= */
+/* HEADERS & SECTIONS */
+/* ========================= */
+.divHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background-color:  #181930;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 5px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 150px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: white;
+    justify-content: start;
+    flex-shrink: 0;
+}
+
+.section span:first-child {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.section span:last-child {
+    font-weight: normal;
+}
+
+/* ========================= */
+/* ACTIONS & ARROWS */
+/* ========================= */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 100px;
+    justify-content: flex-end;
+}
+
+.modify {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.modify:hover {
+    transform: scale(1.05);
+    background-color: #1c3d7b;
+}
+
+.arrow {
+    font-size: 16px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.arrow:hover {
+    color: #2b74b1;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* ========================= */
+/* SEPARATORS */
+/* ========================= */
+.separator {
+    width: calc(100% - 20px);
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 5px 10px;
+}
+
+/* ========================= */
+/* LEVY ACCOUNT SECTION */
+/* 
+   6 columns in both header & row:
+   1) Levy
+   2) Complex
+   3) Number
+   4) Current
+   5) View (button)
+   6) Download Statement (button)
+   Modified so that the View button is above the Download Statement button.
+*/
+.levy-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 0.8fr 0.8fr 1.9fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "levy complex number current view"
+        "levy complex number current download";
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    padding: 8px 10px;
+    background-color: #2a2e5b;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    gap: 8px; 
+}
+
+.levy-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 0.8fr 0.8fr 1.9fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "levy complex number current view"
+        "levy complex number current download";
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+    padding: 5px 10px;
+    gap: 8px; 
+}
+
+/* Positioning grid items */
+.levy-header > *:nth-child(1),
+.levy-row > *:nth-child(1) {
+    grid-area: levy;
+    grid-row: 1 / span 2;
+    text-align: center;
+}
+
+.levy-header > *:nth-child(2),
+.levy-row > *:nth-child(2) {
+    grid-area: complex;
+    grid-row: 1 / span 2;
+    text-align: center;
+}
+
+.levy-header > *:nth-child(3),
+.levy-row > *:nth-child(3) {
+    grid-area: number;
+    grid-row: 1 / span 2;
+    text-align: center;
+}
+
+.levy-header > *:nth-child(4),
+.levy-row > *:nth-child(4) {
+    grid-area: current;
+    grid-row: 1 / span 2;
+    text-align: center;
+}
+
+.levy-header > *:nth-child(5),
+.levy-row > *:nth-child(5) {
+    grid-area: view;
+    text-align: center;
+}
+
+.levy-header > *:nth-child(6),
+.levy-row > *:nth-child(6) {
+    grid-area: download;
+    text-align: center;
+}
+
+/* ========================= */
+/* LOADING STATES */
+/* ========================= */
+.loading-container {
+    /* Fill all space beneath navbar */
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: #1c1d42; /* or adjust to suit your needs */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.loading-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.no-accounts {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ========================= */
+/* RESPONSIVE ADJUSTMENTS */
+/* ========================= */
+
+/* Tablet & small laptop screens (≤ 768px) */
+@media (max-width: 768px) {
+    .outer-container {
+        position: static;
+        top: auto;
+        margin: 90px auto 20px auto;
+        width: 95%;
+        height: auto;
+        min-height: 80%;
+        border-radius: 40px;
+        overflow-y: auto;
+    }
+    .inner-container {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        border-radius: 30px;
+    }
+    .title h1 {
+        font-size: 22px;
+    }
+}
+
+/* Phone screens (≤ 480px) in portrait */
+@media (max-width: 480px) and (orientation: portrait) {
+    .navbar {
+        padding: 6px 10px;
+        height: 50px;
+        border-radius: 30px;
+    }
+    .hamburgerIcon {
+        font-size: 20px;
+    }
+    .title h1 {
+        font-size: 18px;
+    }
+    .outer-container {
+        position: static;
+        margin: 70px auto 10px auto;
+        width: 95%;
+        height: auto;
+        min-height: 80%;
+    }
+    /* Let Levy columns wrap or scroll on extra-small screens */
+    .levy-row span,
+    .levy-header span {
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    .spinner {
+        width: 30px;
+        height: 30px;
+    }
+    .loading-text {
+        font-size: 14px;
+    }
+}
