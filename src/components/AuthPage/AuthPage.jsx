@@ -45,7 +45,7 @@ const AuthPage = () => {
         if (isForgotPassword) {
             try {
                 console.log("Sending Forgot Password request for:", email);
-                const response = await fetch('http://127.0.0.1:8000/api/forgot-password/', {
+                const response = await fetch('https://gmawebapp-backend.onrender.com/api/forgot-password/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email }),
@@ -78,7 +78,7 @@ const AuthPage = () => {
                 localStorage.setItem('userEmail', email);
                 console.log("Sending Login Request:", { email, password });
     
-                const response = await fetch("http://127.0.0.1:8000/api/login/", {
+                const response = await fetch("https://gmawebapp-backend.onrender.com/api/login/", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ email, password }),
@@ -102,7 +102,7 @@ const AuthPage = () => {
             try {
                 console.log("Checking if contact exists...");
                 
-                const findContactResponse = await fetch("http://127.0.0.1:8000/api/contact/find/", {
+                const findContactResponse = await fetch("https://gmawebapp-backend.onrender.com/api/contact/find/", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -123,7 +123,7 @@ const AuthPage = () => {
                     console.log("⚠️ Contact not found, proceeding with registration...");
                 }
     
-                const registerResponse = await fetch("http://127.0.0.1:8000/api/register/", {
+                const registerResponse = await fetch("https://gmawebapp-backend.onrender.com/api/register/", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
