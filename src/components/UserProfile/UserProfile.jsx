@@ -39,7 +39,7 @@ const UserProfile = () => {
                 console.log("📡 Fetching User Profile...");
 
                 // ✅ Get `cj_userprofileid`
-                const profileResponse = await fetch(`http://127.0.0.1:8000/api/user-profile/email/${encodeURIComponent(userEmail)}/`, {
+                const profileResponse = await fetch(`https://gmawebapp-backend.onrender.com/api/user-profile/email/${encodeURIComponent(userEmail)}/`, {
                     method: "GET",
                     headers: { 
                         "Content-Type": "application/json",
@@ -87,7 +87,7 @@ const UserProfile = () => {
         try {
             console.log("📤 Sending update request...");
 
-            const updateResponse = await fetch(`http://127.0.0.1:8000/api/user-profile/update/${userProfileId}/`, {
+            const updateResponse = await fetch(`https://gmawebapp-backend.onrender.com/api/user-profile/update/${userProfileId}/`, {
                 method: "PATCH",
                 headers: { 
                     "Content-Type": "application/json",

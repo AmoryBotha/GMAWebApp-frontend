@@ -32,7 +32,7 @@ const UserPortalPage = () => {
                     return;
                 }
 
-                const response = await fetch("http://127.0.0.1:8000/api/contact/determine-access/", {
+                const response = await fetch("https://gmawebapp-backend.onrender.com/api/contact/determine-access/", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

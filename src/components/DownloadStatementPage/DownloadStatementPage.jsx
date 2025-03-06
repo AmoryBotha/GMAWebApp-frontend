@@ -60,8 +60,8 @@ const DownloadStatementPage = () => {
         }
 
         const apiUrl = type === "pdf"
-            ? "http://127.0.0.1:8000/api/statement/download/pdf/"
-            : "http://127.0.0.1:8000/api/statement/download/excel/";
+            ? "https://gmawebapp-backend.onrender.com/api/statement/download/pdf/"
+            : "https://gmawebapp-backend.onrender.com/api/statement/download/excel/";
 
         const requestBody = {
             email: userEmail,

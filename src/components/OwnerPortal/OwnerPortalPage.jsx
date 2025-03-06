@@ -27,7 +27,7 @@ const OwnerPortalPage = () => {
             console.log("📡 Fetching owner accounts...");
             try {
                 const response = await fetch(
-                    "http://127.0.0.1:8000/api/owner-accounts-linked/",
+                    "https://gmawebapp-backend.onrender.com/api/owner-accounts-linked/",
                     {
                         method: "GET",
                         headers: { Authorization: `Bearer ${token}` },

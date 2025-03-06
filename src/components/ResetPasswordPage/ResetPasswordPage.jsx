@@ -51,7 +51,7 @@ const ResetPasswordPage = () => {
         try {
             console.log("📤 Sending Reset Password Request:", { token, new_password: password });
 
-            const response = await fetch('http://127.0.0.1:8000/api/reset-password/', {
+            const response = await fetch('https://gmawebapp-backend.onrender.com/api/reset-password/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -22,7 +22,7 @@ const LevyAccountDetailPage = () => {
 
             try {
                 const response = await fetch(
-                    `http://127.0.0.1:8000/api/levy-account/${levyAccountId}/${responsiblePersonId}/`,
+                    `https://gmawebapp-backend.onrender.com/api/levy-account/${levyAccountId}/${responsiblePersonId}/`,
                     {
                         method: "GET",
                         headers: { Authorization: `Bearer ${token}` },

@@ -31,7 +31,7 @@ const AccountDetailView = () => {
 
             try {
                 const response = await fetch(
-                    `http://127.0.0.1:8000/api/account/${accountId}/`,
+                    `https://gmawebapp-backend.onrender.com/api/account/${accountId}/`,
                     {
                         method: "GET",
                         headers: { Authorization: `Bearer ${token}` },
@@ -88,7 +88,7 @@ const AccountDetailView = () => {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/account/update/${accountId}/`,
+                `https://gmawebapp-backend.onrender.com/api/account/update/${accountId}/`,
                 {
                     method: "PATCH",
                     headers: {
