@@ -31,6 +31,7 @@ const DownloadStatementPage = () => {
         if (!gmaAccountNumberID || !userProfileID || !userEmail) {
             setError("Missing required account details. Please go back and try again." + sageAccountNumber +" " + gmaAccountNumberID + " " + userEmail + " " + userProfileID);
             setLoading(false);  // ✅ Ensure loading stops
+            navigate("/");
             return;
         }
 
