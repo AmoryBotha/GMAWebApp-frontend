@@ -31,7 +31,12 @@ const DownloadStatementPage = () => {
         if (!gmaAccountNumberID || !userProfileID || !userEmail) {
             setError("Missing required account details. Please go back and try again." + sageAccountNumber +" " + gmaAccountNumberID + " " + userEmail + " " + userProfileID);
             setLoading(false);  // ✅ Ensure loading stops
-            navigate("/");
+             // Log out the user by clearing stored tokens or other session data
+                localStorage.removeItem('token');
+                // If you're using a context or Redux for auth, you may dispatch a logout action here
+
+                // Redirect the user (for example, to the login or home page)
+                navigate("/");
             return;
         }
 
