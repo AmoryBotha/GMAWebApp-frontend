@@ -89,6 +89,7 @@ const AuthPage = () => {
                 if (response.ok) {
                     console.log("✅ Login Successful:", data);
                     localStorage.setItem("token", data.token);
+                    localStorage.setItem("userProfileId", data.user_id);
                     navigate("/user-portal");
                 } else {
                     setError(data.error || "Login failed");
@@ -141,6 +142,7 @@ const AuthPage = () => {
                 if (registerResponse.ok) {
                     alert("Registration successful! Redirecting...");
                     localStorage.setItem("token", registerData.token);
+                    localStorage.setItem("userProfileId", registerData.location);
                     navigate("/user-portal");
                 } else {
                     setError("This email is already registered on the system. Please log in.");
