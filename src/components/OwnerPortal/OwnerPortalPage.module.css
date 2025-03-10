@@ -289,6 +289,18 @@
     margin-bottom: 5px;
     gap: 8px; 
 }
+@media screen and (min-width: 601px) {
+    .levy-header {
+      font-size: 16px;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 400px) {
+    .levy-header {
+      font-size: 10px;
+    }
+  }
 
 .levy-row {
     display: grid;
@@ -305,6 +317,18 @@
     padding: 5px 10px;
     gap: 8px; 
 }
+@media screen and (min-width: 601px) {
+    .levy-row {
+      font-size: 16px;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 400px) {
+    .levy-row {
+      font-size: 10px;
+    }
+  }
 
 /* Positioning grid items */
 .levy-header > *:nth-child(1),
