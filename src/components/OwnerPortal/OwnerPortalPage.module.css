@@ -298,7 +298,7 @@
   /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
   @media screen and (max-width: 400px) {
     .levy-header {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 
@@ -326,7 +326,7 @@
   /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
   @media screen and (max-width: 400px) {
     .levy-row {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 
