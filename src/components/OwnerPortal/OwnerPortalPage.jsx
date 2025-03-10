@@ -153,7 +153,7 @@ const OwnerPortalPage = () => {
                                         <span>{owner.email}</span>
                                     </div>
                                     <div className={styles.actions}>
-                                    <span className={styles.modify} onClick={() => navigate(`/account-detail-view/${owner.id}`)}>Modify</span> 
+                                    <span className={styles.modify} onClick={() => navigate(`/account-detail-view/${owner.id}`)}>Modify     </span> 
                                         <span className={styles.arrow} onClick={() => toggleExpand(owner.id)}>
                                             {expandedOwnerId === owner.id ? "↑" : "↓"}
                                         </span>
