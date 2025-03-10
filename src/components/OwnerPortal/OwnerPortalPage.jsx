@@ -171,7 +171,7 @@ const OwnerPortalPage = () => {
                                                 <div className={styles["levy-header"]}>
                                                     <span>Levy</span>
                                                     <span>Complex</span>
-                                                    <span>Number</span>
+                                                    <span>No.</span>
                                                     <span>Current</span>
                                                     <span>                 </span>
                                                     <span>                 </span>
