@@ -232,9 +232,10 @@
 }
 
 .arrow {
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     color: #FFFFFF;
+    font-weight: bold;
 }
 
 .arrow:hover {
